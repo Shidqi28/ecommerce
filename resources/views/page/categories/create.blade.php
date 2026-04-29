@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Categories') }}
+            {{ __('Add Categories') }}
         </h2>
     </x-slot>
 
@@ -15,11 +15,11 @@
                         <div class="p-1 rounded-xl">
                             <div class="mb-4">
                                 <label for="name"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name
-                                    <span class="text-red-500">*</span></label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name Catagories
+                                    <span class="text-red-500"></span></label>
                                 <input type="text" id="name" name="name"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Masukan Nama disini ..."
+                                    placeholder="Masukan Nama Categories Disini ..."
                                     oninput="this.value = this.value.toUpperCase();" />
                             </div>
                             

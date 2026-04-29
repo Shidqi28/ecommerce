@@ -20,8 +20,8 @@
                                 <th class="text-center w-20">Categoris Id</th>
                                 <th class="text-center w-20">Name</th>
                                 <th class="text-center w-20">Description</th>
-                                <th class="text-center w-20">Base Price</th>
-                                <th class="text-center w-20">Is Active</th>
+                                <th class="text-center w-20">Price</th>
+                                <th class="text-center w-20">Active</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -32,13 +32,30 @@
                             @forelse($data as $i)
                             <tr>
                                 <td class="text-center">{{$no++}}</td>
-                                <td class="text-wrap">{{$i->brand_id}}</td>
-                                <td class="text-wrap">{{$i->category_id}}</td>
+                                <td class="text-wrap">{{$i->brands->name}}</td>
+                                <td class="text-wrap">{{$i->categories->name}}</td>
                                 <td class="text-wrap">{{$i->name}}</td>
                                 <td class="text-wrap">{{$i->description}}</td>
                                 <td class="text-wrap">{{$i->base_price}}</td>
                                 <td class="text-wrap">{{$i->is_active}}</td>
                                 <td class="text-center">
+
+                                    
+
+                                    <button type="button" class="flex bg-amber-200 hover:bg-amber-700 hover:bg-amber-500 text-amber-600 hover:text-white inline-flex rounded-full" data-id="{{$i->id}}"
+                                        data-modal-target="sourceModal" data-name="{{ $i->name }}"
+                                        onclick="editSourceModal(this)">
+                                        <div class="bg-amber-100 text-amber-600 w-8 h-8 items-center justify-center flex rounded-full">
+                                            <i class="fas fa-edit text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="flex items-center justify-between  font-medium rounded-full pl-2 pr-6 py-2 text-xs transition-all duration-300">
+                                                <a href="{{route('products.show', $i->id)}}">Detail</a>
+                                            </div>
+                                        </div>
+                                    </button>
+
                                     <button type="button" class="flex bg-amber-200 hover:bg-amber-700 hover:bg-amber-500 text-amber-600 hover:text-white inline-flex rounded-full" data-id="{{$i->id}}"
                                         data-modal-target="sourceModal" data-name="{{ $i->name }}"
                                         onclick="editSourceModal(this)">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brands;
+use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,9 @@ class ProductsController extends Controller
     public function index()
     {
         $data = Products::all();
-        return view('page.products.index') -> with (['data' => $data]);
+        return view('page.products.index') -> with ([
+            'data' => $data
+            ]);
     }
 
     /**
@@ -21,7 +25,12 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('page.products.create');
+        $brands = Brands::all();
+        $categories = Categories::all();
+        return view('page.products.create') -> with ([
+            'brands' => $brands,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -49,7 +58,10 @@ class ProductsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Products::all();
+        return view('page.products.detail') -> with ([
+            'data' => $data
+            ]);
     }
 
     /**

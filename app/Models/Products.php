@@ -19,4 +19,14 @@ class Products extends Model
     ];
 
     protected $table = 'products';
+
+    public function brands()
+    {
+        return $this->belongsTo(Brands::class, 'brand_id', 'id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsTo(Categories::class, 'category_id', 'id');
+    }
 }
