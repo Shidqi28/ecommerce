@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductsVariants;
 use Illuminate\Http\Request;
 
 class ProductsVariantsController extends Controller
@@ -11,7 +12,10 @@ class ProductsVariantsController extends Controller
      */
     public function index()
     {
-        //
+        $data = ProductsVariants::all();
+        return view('page.products.variant') -> with ([
+            'data' => $data
+            ]);
     }
 
     /**

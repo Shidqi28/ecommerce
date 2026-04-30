@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductsImage;
 use Illuminate\Http\Request;
 
 class ProductsImageController extends Controller
@@ -11,7 +12,10 @@ class ProductsImageController extends Controller
      */
     public function index()
     {
-        //
+        $data = ProductsImage::all();
+        return view('page.products.image') -> with ([
+            'data' => $data
+            ]);
     }
 
     /**

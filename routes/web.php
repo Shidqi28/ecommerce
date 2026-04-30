@@ -3,6 +3,9 @@
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductsImageController;
+use App\Http\Controllers\ProductsSizeController;
+use App\Http\Controllers\ProductsVariantsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('brands', BrandsController::class);
     Route::resource('categories', CategoriesController::class);
     Route::resource('products', ProductsController::class);
+    Route::resource('variant', ProductsVariantsController::class);
+    Route::resource('image', ProductsImageController::class);
+    Route::resource('size', ProductsSizeController::class);
 });
 
 require __DIR__.'/auth.php';

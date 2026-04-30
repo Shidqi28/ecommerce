@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductsSize;
 use Illuminate\Http\Request;
 
 class ProductsSizeController extends Controller
@@ -11,7 +12,10 @@ class ProductsSizeController extends Controller
      */
     public function index()
     {
-        //
+        $data = ProductsSize::all();
+        return view('page.products.size') -> with ([
+            'data' => $data
+            ]);
     }
 
     /**
